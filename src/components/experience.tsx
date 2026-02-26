@@ -33,7 +33,7 @@ export function Experience() {
 					{EXPERIENCES.map((exp) => (
 						<div
 							key={`${exp.company}-${exp.title}`}
-							className="card-glow rounded-xl border border-border bg-surface/30 p-6 md:p-8"
+							className="card-glow rounded-xl border border-border-bright bg-surface p-6 md:p-8"
 						>
 							<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
 								<div>
@@ -51,7 +51,7 @@ export function Experience() {
 											{exp.period}
 										</span>
 									) : (
-										<span className="font-mono text-foreground-muted/60">{exp.period}</span>
+										<span className="font-mono text-foreground-muted/80">{exp.period}</span>
 									)}
 								</div>
 							</div>
@@ -62,7 +62,7 @@ export function Experience() {
 								{exp.tags.map((tag) => (
 									<span
 										key={tag}
-										className="rounded border border-border bg-background px-2.5 py-0.5 text-[11px] font-mono text-foreground-muted"
+										className="rounded border border-border-bright bg-surface-elevated/80 px-2.5 py-0.5 text-[11px] font-mono text-foreground-muted"
 									>
 										{tag}
 									</span>

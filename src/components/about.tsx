@@ -6,7 +6,7 @@ export function About() {
 
 				<div className="mt-12 grid md:grid-cols-[2fr_1fr] gap-12">
 					{/* Bio */}
-					<div className="space-y-5 text-foreground-muted leading-relaxed">
+					<div className="space-y-5 text-foreground leading-relaxed">
 						<p>
 							I am an energy consultant at <span className="text-accent">LCG Consulting</span> in
 							Los Altos, CA, where I work at the intersection of power systems engineering and
@@ -53,8 +53,8 @@ function SectionHeader({ label, title }: { label: string; title: string }) {
 
 function QuickFact({ label, value, href }: { label: string; value: string; href?: string }) {
 	return (
-		<div className="rounded-lg border border-border bg-surface/40 p-4">
-			<span className="block text-[10px] uppercase tracking-[0.15em] text-foreground-muted/60 mb-1">
+		<div className="rounded-lg border border-border-bright bg-surface p-4">
+			<span className="block text-[10px] uppercase tracking-[0.15em] text-foreground-muted/80 mb-1">
 				{label}
 			</span>
 			{href ? (

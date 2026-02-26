@@ -7,7 +7,7 @@ export function Education() {
 				<SectionHeader label="04" title="Education" />
 
 				<div className="mt-12">
-					<div className="card-glow rounded-xl border border-border bg-surface/30 p-6 md:p-8">
+					<div className="card-glow rounded-xl border border-border-bright bg-surface p-6 md:p-8">
 						<div className="flex flex-col md:flex-row md:items-start gap-6">
 							{/* Degree icon */}
 							<div className="shrink-0 h-14 w-14 rounded-xl border border-border-bright bg-accent-glow flex items-center justify-center">
@@ -42,7 +42,7 @@ export function Education() {
 								</div>
 
 								<div className="mt-5">
-									<span className="block text-[10px] uppercase tracking-[0.15em] text-foreground-muted/60 mb-2">
+									<span className="block text-[10px] uppercase tracking-[0.15em] text-foreground-muted/80 mb-2">
 										Research Areas
 									</span>
 									<div className="flex flex-wrap gap-2">
@@ -56,7 +56,7 @@ export function Education() {
 										].map((area) => (
 											<span
 												key={area}
-												className="rounded border border-border bg-background px-2.5 py-0.5 text-[11px] font-mono text-foreground-muted"
+												className="rounded border border-border-bright bg-surface-elevated/80 px-2.5 py-0.5 text-[11px] font-mono text-foreground-muted"
 											>
 												{area}
 											</span>

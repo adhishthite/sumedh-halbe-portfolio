@@ -55,7 +55,7 @@ function ThemeToggle({ isDark, onToggle }: { isDark: boolean; onToggle: () => vo
 		<button
 			type="button"
 			onClick={onToggle}
-			className="p-2 text-foreground-muted hover:text-accent transition-colors"
+			className="p-2 text-foreground hover:text-accent transition-colors"
 			aria-label="Toggle theme"
 		>
 			{isDark ? <SunIcon /> : <MoonIcon />}
@@ -89,13 +89,15 @@ export function Nav() {
 	return (
 		<nav
 			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-				scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border" : "bg-transparent"
+				scrolled
+					? "bg-background/90 backdrop-blur-xl border-b border-border shadow-[0_1px_0_var(--color-border-bright)]"
+					: "bg-transparent"
 			}`}
 		>
 			<div className="mx-auto max-w-6xl px-6 flex items-center justify-between h-16">
 				<a
 					href="#"
-					className="font-heading text-lg font-semibold tracking-tight text-foreground hover:text-accent transition-colors"
+					className="font-heading text-lg font-bold tracking-[0.08em] text-foreground hover:text-accent transition-colors"
 				>
 					SMH
 				</a>
@@ -106,7 +108,7 @@ export function Nav() {
 						<a
 							key={item.href}
 							href={item.href}
-							className="text-sm text-foreground-muted hover:text-accent transition-colors duration-200"
+							className="text-sm text-foreground hover:text-accent transition-colors duration-200"
 						>
 							{item.label}
 						</a>
@@ -120,7 +122,7 @@ export function Nav() {
 					<button
 						type="button"
 						onClick={() => setMobileOpen(!mobileOpen)}
-						className="p-2 text-foreground-muted hover:text-accent transition-colors"
+						className="p-2 text-foreground hover:text-accent transition-colors"
 						aria-label="Toggle menu"
 					>
 						<svg
@@ -144,14 +146,14 @@ export function Nav() {
 
 			{/* Mobile menu */}
 			{mobileOpen && (
-				<div className="md:hidden bg-surface/95 backdrop-blur-xl border-b border-border">
+				<div className="md:hidden bg-surface-elevated/95 backdrop-blur-xl border-b border-border">
 					<div className="px-6 py-4 flex flex-col gap-4">
 						{NAV_ITEMS.map((item) => (
 							<a
 								key={item.href}
 								href={item.href}
 								onClick={() => setMobileOpen(false)}
-								className="text-sm text-foreground-muted hover:text-accent transition-colors"
+								className="text-sm text-foreground hover:text-accent transition-colors"
 							>
 								{item.label}
 							</a>

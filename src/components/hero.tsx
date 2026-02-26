@@ -13,9 +13,9 @@ export function Hero() {
 			{/* Content */}
 			<div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
 				{/* Status badge */}
-				<div className="animate-fade-up opacity-0 mb-8 inline-flex items-center gap-2.5 rounded-full border border-border-bright bg-surface/50 px-5 py-2 backdrop-blur-sm">
+				<div className="animate-fade-up opacity-0 mb-8 inline-flex items-center gap-2.5 rounded-full border border-border-bright bg-surface-elevated/85 px-5 py-2 shadow-[0_10px_30px_var(--color-accent-glow)] backdrop-blur-sm">
 					<span className="h-2 w-2 rounded-full bg-green animate-pulse-glow" />
-					<span className="font-mono text-xs tracking-wider text-foreground-muted">
+					<span className="font-mono text-xs tracking-wider text-foreground">
 						Energy Consultant at LCG Consulting
 					</span>
 				</div>
@@ -41,7 +41,7 @@ export function Hero() {
 				<div className="animate-fade-up opacity-0 animate-delay-300 mt-10 flex flex-col sm:flex-row justify-center gap-4">
 					<a
 						href="#publications"
-						className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent/10 border border-accent/30 text-accent font-heading text-sm tracking-wider uppercase rounded-lg hover:bg-accent/20 hover:border-accent/50 transition-all"
+						className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent border border-accent text-[var(--color-accent-foreground)] font-heading text-sm tracking-wider uppercase rounded-lg shadow-[0_10px_24px_var(--color-accent-glow)] hover:bg-accent-dim hover:border-accent-dim transition-all"
 					>
 						View Research
 						<svg
@@ -57,7 +57,7 @@ export function Hero() {
 					</a>
 					<a
 						href="#contact"
-						className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border-bright text-foreground-muted font-heading text-sm tracking-wider uppercase rounded-lg hover:border-accent/30 hover:text-accent transition-all"
+						className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border-bright bg-surface/60 text-foreground font-heading text-sm tracking-wider uppercase rounded-lg hover:border-accent/40 hover:text-accent hover:bg-surface-elevated/80 transition-all"
 					>
 						Get in Touch
 					</a>
@@ -66,7 +66,7 @@ export function Hero() {
 
 			{/* Scroll indicator */}
 			<div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-up opacity-0 animate-delay-500">
-				<span className="font-mono text-[10px] tracking-[0.3em] uppercase text-foreground-muted/50">
+				<span className="font-mono text-[10px] tracking-[0.3em] uppercase text-foreground-muted/80">
 					Scroll
 				</span>
 				<div className="w-px h-8 bg-gradient-to-b from-accent/40 to-transparent" />

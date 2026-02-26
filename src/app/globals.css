@@ -9,6 +9,7 @@
 	--color-accent: oklch(0.78 0.16 200);
 	--color-accent-dim: oklch(0.58 0.12 200);
 	--color-accent-glow: oklch(0.78 0.16 200 / 0.15);
+	--color-accent-foreground: oklch(0.14 0.02 250);
 	--color-green: oklch(0.70 0.15 160);
 	--color-green-dim: oklch(0.52 0.12 160);
 	--color-border: oklch(0.78 0.16 200 / 0.08);
@@ -26,18 +27,19 @@ html {
 }
 
 html.light {
-	--color-background: oklch(1.0 0 0);
-	--color-surface: oklch(0.96 0.005 250);
-	--color-surface-elevated: oklch(0.92 0.008 250);
-	--color-foreground: oklch(0.18 0.03 255);
-	--color-foreground-muted: oklch(0.40 0.03 255);
-	--color-accent: oklch(0.52 0.12 200);
-	--color-accent-dim: oklch(0.44 0.10 200);
-	--color-accent-glow: oklch(0.52 0.12 200 / 0.18);
-	--color-green: oklch(0.52 0.14 160);
-	--color-green-dim: oklch(0.44 0.12 160);
-	--color-border: oklch(0.18 0.03 255 / 0.12);
-	--color-border-bright: oklch(0.18 0.03 255 / 0.25);
+	--color-background: oklch(0.985 0.006 248);
+	--color-surface: oklch(0.94 0.01 248);
+	--color-surface-elevated: oklch(0.90 0.013 248);
+	--color-foreground: oklch(0.22 0.03 252);
+	--color-foreground-muted: oklch(0.34 0.024 252);
+	--color-accent: oklch(0.47 0.14 232);
+	--color-accent-dim: oklch(0.40 0.12 232);
+	--color-accent-glow: oklch(0.47 0.14 232 / 0.22);
+	--color-accent-foreground: oklch(0.99 0 0);
+	--color-green: oklch(0.50 0.16 159);
+	--color-green-dim: oklch(0.43 0.14 159);
+	--color-border: oklch(0.28 0.03 252 / 0.18);
+	--color-border-bright: oklch(0.28 0.03 252 / 0.3);
 }
 
 body {

@@ -46,14 +46,14 @@ export function Publications() {
 							key={pub.title}
 							className={`card-glow group relative rounded-xl border p-6 md:p-8 ${
 								pub.peerReviewed
-									? "border-accent/20 bg-accent/[0.02]"
-									: "border-border bg-surface/30"
+									? "border-accent/35 bg-accent/10"
+									: "border-border-bright bg-surface"
 							}`}
 						>
 							{/* Peer reviewed badge */}
 							{pub.peerReviewed && (
 								<div className="absolute top-0 right-6 -translate-y-1/2">
-									<span className="px-3 py-0.5 text-[10px] font-mono tracking-widest uppercase bg-accent/10 text-accent border border-accent/20 rounded-full">
+									<span className="px-3 py-0.5 text-[10px] font-mono tracking-widest uppercase bg-accent/20 text-accent-dim border border-accent/40 rounded-full">
 										Peer Reviewed
 									</span>
 								</div>
@@ -61,7 +61,7 @@ export function Publications() {
 
 							<div className="flex items-start gap-4">
 								{/* Index */}
-								<span className="hidden sm:flex shrink-0 h-8 w-8 items-center justify-center rounded-lg border border-border bg-background font-mono text-xs text-accent">
+								<span className="hidden sm:flex shrink-0 h-8 w-8 items-center justify-center rounded-lg border border-border-bright bg-surface-elevated/80 font-mono text-xs text-accent">
 									{String(i + 1).padStart(2, "0")}
 								</span>
 
@@ -79,7 +79,7 @@ export function Publications() {
 
 									{pub.coAuthors.length > 0 && (
 										<p className="mt-2 text-xs text-foreground-muted/70">
-											<span className="text-foreground-muted/40">with </span>
+											<span className="text-foreground-muted/70">with </span>
 											{pub.coAuthors.join(", ")}
 										</p>
 									)}

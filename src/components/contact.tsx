@@ -45,13 +45,13 @@ export function Contact() {
 									href={link.href}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-center gap-4 p-4 rounded-lg border border-border bg-surface/50 card-glow group"
+									className="flex items-center gap-4 p-4 rounded-lg border border-border-bright bg-surface card-glow group"
 								>
 									<div
 										className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
 											link.color === "green"
-												? "bg-green/10 text-green/60 group-hover:text-green"
-												: "bg-accent/10 text-accent/60 group-hover:text-accent"
+												? "bg-green/18 text-green-dim group-hover:text-green"
+												: "bg-accent/18 text-accent-dim group-hover:text-accent"
 										}`}
 									>
 										{link.icon}
@@ -66,7 +66,7 @@ export function Contact() {
 										>
 											{link.label}
 										</span>
-										<span className="block font-mono text-xs text-foreground-muted/60 truncate">
+										<span className="block font-mono text-xs text-foreground-muted/80 truncate">
 											{link.sublabel}
 										</span>
 									</div>
@@ -77,7 +77,7 @@ export function Contact() {
 										fill="none"
 										stroke="currentColor"
 										strokeWidth="2"
-										className="shrink-0 text-foreground-muted/30 group-hover:text-accent/50 transition-colors"
+										className="shrink-0 text-foreground-muted/60 group-hover:text-accent transition-colors"
 									>
 										<path d="M7 17L17 7M7 7h10v10" />
 									</svg>
@@ -95,10 +95,10 @@ export function Contact() {
 							<div className="absolute inset-0 flex items-center justify-center">
 								<div className="text-center">
 									<div className="w-3 h-3 rounded-full bg-accent mx-auto animate-pulse-glow" />
-									<span className="block mt-3 font-mono text-[10px] tracking-[0.3em] uppercase text-accent/50">
+									<span className="block mt-3 font-mono text-[10px] tracking-[0.3em] uppercase text-accent/70">
 										Available for
 									</span>
-									<span className="block font-mono text-[10px] tracking-[0.3em] uppercase text-accent/50">
+									<span className="block font-mono text-[10px] tracking-[0.3em] uppercase text-accent/70">
 										Collaboration
 									</span>
 								</div>

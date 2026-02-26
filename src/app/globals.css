@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme inline {
-	--color-background: #06090f;
-	--color-surface: #0c1220;
-	--color-surface-elevated: #111a2e;
-	--color-foreground: #e2e8f0;
-	--color-foreground-muted: #8b9dc3;
-	--color-accent: #00d4ff;
-	--color-accent-dim: #0088aa;
-	--color-accent-glow: rgba(0, 212, 255, 0.15);
-	--color-green: #10b981;
-	--color-green-dim: #047857;
-	--color-border: rgba(0, 212, 255, 0.08);
-	--color-border-bright: rgba(0, 212, 255, 0.2);
+	--color-background: oklch(0.13 0.02 250);
+	--color-surface: oklch(0.18 0.025 250);
+	--color-surface-elevated: oklch(0.22 0.03 250);
+	--color-foreground: oklch(0.92 0.01 240);
+	--color-foreground-muted: oklch(0.68 0.04 245);
+	--color-accent: oklch(0.78 0.16 200);
+	--color-accent-dim: oklch(0.58 0.12 200);
+	--color-accent-glow: oklch(0.78 0.16 200 / 0.15);
+	--color-green: oklch(0.70 0.15 160);
+	--color-green-dim: oklch(0.52 0.12 160);
+	--color-border: oklch(0.78 0.16 200 / 0.08);
+	--color-border-bright: oklch(0.78 0.16 200 / 0.2);
 
 	--font-display: var(--font-instrument-serif), Georgia, serif;
 	--font-heading: var(--font-sora), system-ui, sans-serif;
@@ -26,18 +26,18 @@ html {
 }
 
 html.light {
-	--color-background: #ffffff;
-	--color-surface: #f1f5f9;
-	--color-surface-elevated: #e2e8f0;
-	--color-foreground: #0f172a;
-	--color-foreground-muted: #334155;
-	--color-accent: #0e7490;
-	--color-accent-dim: #155e75;
-	--color-accent-glow: rgba(14, 116, 144, 0.18);
-	--color-green: #047857;
-	--color-green-dim: #065f46;
-	--color-border: rgba(15, 23, 42, 0.12);
-	--color-border-bright: rgba(15, 23, 42, 0.25);
+	--color-background: oklch(1.0 0 0);
+	--color-surface: oklch(0.96 0.005 250);
+	--color-surface-elevated: oklch(0.92 0.008 250);
+	--color-foreground: oklch(0.18 0.03 255);
+	--color-foreground-muted: oklch(0.40 0.03 255);
+	--color-accent: oklch(0.52 0.12 200);
+	--color-accent-dim: oklch(0.44 0.10 200);
+	--color-accent-glow: oklch(0.52 0.12 200 / 0.18);
+	--color-green: oklch(0.52 0.14 160);
+	--color-green-dim: oklch(0.44 0.12 160);
+	--color-border: oklch(0.18 0.03 255 / 0.12);
+	--color-border-bright: oklch(0.18 0.03 255 / 0.25);
 }
 
 body {
@@ -50,11 +50,11 @@ body {
 }
 
 ::selection {
-	background: rgba(0, 212, 255, 0.3);
+	background: oklch(0.78 0.16 200 / 0.3);
 	color: #fff;
 }
 html.light ::selection {
-	background: rgba(8, 145, 178, 0.3);
+	background: oklch(0.52 0.12 200 / 0.3);
 	color: #fff;
 }
 
@@ -65,14 +65,14 @@ html.light ::selection {
 	background: var(--color-background);
 }
 ::-webkit-scrollbar-thumb {
-	background: #1a2744;
+	background: oklch(0.25 0.03 250);
 	border-radius: 3px;
 }
 html.light ::-webkit-scrollbar-track {
 	background: var(--color-background);
 }
 html.light ::-webkit-scrollbar-thumb {
-	background: #cbd5e1;
+	background: oklch(0.82 0.01 250);
 }
 ::-webkit-scrollbar-thumb:hover {
 	background: var(--color-accent);
@@ -80,18 +80,18 @@ html.light ::-webkit-scrollbar-thumb {
 
 .grid-bg {
 	background-image: linear-gradient(
-			rgba(0, 212, 255, 0.03) 1px,
+			oklch(0.78 0.16 200 / 0.03) 1px,
 			transparent 1px
 		),
-		linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+		linear-gradient(90deg, oklch(0.78 0.16 200 / 0.03) 1px, transparent 1px);
 	background-size: 60px 60px;
 }
 html.light .grid-bg {
 	background-image: linear-gradient(
-			rgba(0, 50, 80, 0.04) 1px,
+			oklch(0.30 0.06 220 / 0.04) 1px,
 			transparent 1px
 		),
-		linear-gradient(90deg, rgba(0, 50, 80, 0.04) 1px, transparent 1px);
+		linear-gradient(90deg, oklch(0.30 0.06 220 / 0.04) 1px, transparent 1px);
 }
 
 .glow-line {
@@ -150,10 +150,10 @@ html.light .grid-bg {
 @keyframes pulse-glow {
 	0%,
 	100% {
-		box-shadow: 0 0 8px 2px rgba(0, 212, 255, 0.3);
+		box-shadow: 0 0 8px 2px oklch(0.78 0.16 200 / 0.3);
 	}
 	50% {
-		box-shadow: 0 0 20px 6px rgba(0, 212, 255, 0.6);
+		box-shadow: 0 0 20px 6px oklch(0.78 0.16 200 / 0.6);
 	}
 }
 .animate-pulse-glow {
@@ -186,22 +186,22 @@ html.light .grid-bg {
 .card-glow:hover {
 	border-color: var(--color-accent);
 	box-shadow:
-		0 0 20px rgba(0, 212, 255, 0.1),
-		inset 0 0 20px rgba(0, 212, 255, 0.05);
+		0 0 20px oklch(0.78 0.16 200 / 0.1),
+		inset 0 0 20px oklch(0.78 0.16 200 / 0.05);
 }
 html.light .card-glow:hover {
 	box-shadow:
-		0 0 20px rgba(8, 145, 178, 0.1),
-		inset 0 0 20px rgba(8, 145, 178, 0.05);
+		0 0 20px oklch(0.52 0.12 200 / 0.1),
+		inset 0 0 20px oklch(0.52 0.12 200 / 0.05);
 }
 
 @keyframes pulse-glow-light {
 	0%,
 	100% {
-		box-shadow: 0 0 8px 2px rgba(8, 145, 178, 0.2);
+		box-shadow: 0 0 8px 2px oklch(0.52 0.12 200 / 0.2);
 	}
 	50% {
-		box-shadow: 0 0 20px 6px rgba(8, 145, 178, 0.4);
+		box-shadow: 0 0 20px 6px oklch(0.52 0.12 200 / 0.4);
 	}
 }
 html.light .animate-pulse-glow {

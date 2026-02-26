@@ -5,7 +5,7 @@ export function Hero() {
 			<div className="absolute inset-0 grid-bg" />
 
 			{/* Radial gradient overlay */}
-			<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(0,212,255,0.06)_0%,_transparent_70%)]" />
+			<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-accent-glow)_0%,_transparent_70%)]" />
 
 			{/* Top energy line */}
 			<div className="absolute top-0 left-0 right-0 energy-line" />

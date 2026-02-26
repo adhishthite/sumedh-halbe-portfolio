@@ -26,18 +26,18 @@ html {
 }
 
 html.light {
-	--color-background: #f8fafc;
+	--color-background: #ffffff;
 	--color-surface: #f1f5f9;
 	--color-surface-elevated: #e2e8f0;
-	--color-foreground: #1e293b;
-	--color-foreground-muted: #475569;
-	--color-accent: #0891b2;
-	--color-accent-dim: #0e7490;
-	--color-accent-glow: rgba(8, 145, 178, 0.15);
-	--color-green: #059669;
-	--color-green-dim: #047857;
-	--color-border: rgba(0, 50, 80, 0.1);
-	--color-border-bright: rgba(0, 50, 80, 0.2);
+	--color-foreground: #0f172a;
+	--color-foreground-muted: #334155;
+	--color-accent: #0e7490;
+	--color-accent-dim: #155e75;
+	--color-accent-glow: rgba(14, 116, 144, 0.18);
+	--color-green: #047857;
+	--color-green-dim: #065f46;
+	--color-border: rgba(15, 23, 42, 0.12);
+	--color-border-bright: rgba(15, 23, 42, 0.25);
 }
 
 body {

@@ -14,10 +14,10 @@
 	--color-border: rgba(0, 212, 255, 0.08);
 	--color-border-bright: rgba(0, 212, 255, 0.2);
 
-	--font-display: var(--font-sora), system-ui, sans-serif;
+	--font-display: var(--font-instrument-serif), Georgia, serif;
 	--font-heading: var(--font-sora), system-ui, sans-serif;
-	--font-body: var(--font-source-sans), system-ui, sans-serif;
-	--font-mono: ui-monospace, "SFMono-Regular", monospace;
+	--font-body: var(--font-outfit), system-ui, sans-serif;
+	--font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
 
 html {
@@ -25,14 +25,36 @@ html {
 	scroll-padding-top: 5rem;
 }
 
+html.light {
+	--color-background: #f8fafc;
+	--color-surface: #f1f5f9;
+	--color-surface-elevated: #e2e8f0;
+	--color-foreground: #1e293b;
+	--color-foreground-muted: #475569;
+	--color-accent: #0891b2;
+	--color-accent-dim: #0e7490;
+	--color-accent-glow: rgba(8, 145, 178, 0.15);
+	--color-green: #059669;
+	--color-green-dim: #047857;
+	--color-border: rgba(0, 50, 80, 0.1);
+	--color-border-bright: rgba(0, 50, 80, 0.2);
+}
+
 body {
 	background: var(--color-background);
 	color: var(--color-foreground);
 	font-family: var(--font-body);
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 }
 
 ::selection {
 	background: rgba(0, 212, 255, 0.3);
+	color: #fff;
+}
+html.light ::selection {
+	background: rgba(8, 145, 178, 0.3);
 	color: #fff;
 }
 
@@ -46,6 +68,12 @@ body {
 	background: #1a2744;
 	border-radius: 3px;
 }
+html.light ::-webkit-scrollbar-track {
+	background: var(--color-background);
+}
+html.light ::-webkit-scrollbar-thumb {
+	background: #cbd5e1;
+}
 ::-webkit-scrollbar-thumb:hover {
 	background: var(--color-accent);
 }
@@ -57,6 +85,13 @@ body {
 		),
 		linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
 	background-size: 60px 60px;
+}
+html.light .grid-bg {
+	background-image: linear-gradient(
+			rgba(0, 50, 80, 0.04) 1px,
+			transparent 1px
+		),
+		linear-gradient(90deg, rgba(0, 50, 80, 0.04) 1px, transparent 1px);
 }
 
 .glow-line {
@@ -153,4 +188,22 @@ body {
 	box-shadow:
 		0 0 20px rgba(0, 212, 255, 0.1),
 		inset 0 0 20px rgba(0, 212, 255, 0.05);
+}
+html.light .card-glow:hover {
+	box-shadow:
+		0 0 20px rgba(8, 145, 178, 0.1),
+		inset 0 0 20px rgba(8, 145, 178, 0.05);
+}
+
+@keyframes pulse-glow-light {
+	0%,
+	100% {
+		box-shadow: 0 0 8px 2px rgba(8, 145, 178, 0.2);
+	}
+	50% {
+		box-shadow: 0 0 20px 6px rgba(8, 145, 178, 0.4);
+	}
+}
+html.light .animate-pulse-glow {
+	animation: pulse-glow-light 2.5s ease-in-out infinite;
 }

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
 	--color-background: oklch(0.13 0.02 250);
 	--color-surface: oklch(0.18 0.025 250);
 	--color-surface-elevated: oklch(0.22 0.03 250);

@@ -7,27 +7,22 @@ const PUBLICATIONS = [
 		journal: "IEEE Power and Energy Magazine",
 		year: "2025",
 		coAuthors: ["Sidart Deb", "Keith Dsouza", "Micah Thomas"],
-		status: "published" as const,
+		peerReviewed: true,
 	},
 	{
 		title:
 			"A comprehensive methodology for assessing the costs and benefits of renewable generation on utility operations",
 		journal: "Renewable Energy",
 		year: "2021",
-		coAuthors: [
-			"Badrul Chowdhury",
-			"Mesut E. Baran",
-			"Peter Schwarz",
-			"Autumn Proudlove",
-		],
-		status: "published" as const,
+		coAuthors: ["Badrul Chowdhury", "Mesut E. Baran", "Peter Schwarz", "Autumn Proudlove"],
+		peerReviewed: true,
 	},
 	{
 		title: "The challenges of valuing distributed generation",
 		journal: null,
 		year: null,
 		coAuthors: [],
-		status: "forthcoming" as const,
+		peerReviewed: false,
 	},
 	{
 		title:
@@ -35,7 +30,7 @@ const PUBLICATIONS = [
 		journal: null,
 		year: null,
 		coAuthors: [],
-		status: "forthcoming" as const,
+		peerReviewed: false,
 	},
 ];
 
@@ -49,8 +44,21 @@ export function Publications() {
 					{PUBLICATIONS.map((pub, i) => (
 						<article
 							key={pub.title}
-							className="card-glow group rounded-xl border border-border bg-surface/30 p-6 md:p-8"
+							className={`card-glow group relative rounded-xl border p-6 md:p-8 ${
+								pub.peerReviewed
+									? "border-accent/20 bg-accent/[0.02]"
+									: "border-border bg-surface/30"
+							}`}
 						>
+							{/* Peer reviewed badge */}
+							{pub.peerReviewed && (
+								<div className="absolute top-0 right-6 -translate-y-1/2">
+									<span className="px-3 py-0.5 text-[10px] font-mono tracking-widest uppercase bg-accent/10 text-accent border border-accent/20 rounded-full">
+										Peer Reviewed
+									</span>
+								</div>
+							)}
+
 							<div className="flex items-start gap-4">
 								{/* Index */}
 								<span className="hidden sm:flex shrink-0 h-8 w-8 items-center justify-center rounded-lg border border-border bg-background font-mono text-xs text-accent">
@@ -64,21 +72,14 @@ export function Publications() {
 
 									<div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-foreground-muted">
 										{pub.journal && (
-											<span className="italic text-accent-dim">
-												{pub.journal}
-											</span>
+											<span className="font-display italic text-accent/80">{pub.journal}</span>
 										)}
-										{pub.year && <span>{pub.year}</span>}
-										{pub.status === "forthcoming" && (
-											<span className="rounded bg-accent-glow text-accent px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider">
-												Forthcoming
-											</span>
-										)}
+										{pub.year && <span className="font-mono">{pub.year}</span>}
 									</div>
 
 									{pub.coAuthors.length > 0 && (
 										<p className="mt-2 text-xs text-foreground-muted/70">
-											Co-authors:{" "}
+											<span className="text-foreground-muted/40">with </span>
 											{pub.coAuthors.join(", ")}
 										</p>
 									)}
@@ -86,6 +87,22 @@ export function Publications() {
 							</div>
 						</article>
 					))}
+				</div>
+
+				{/* ORCID */}
+				<div className="mt-10 flex items-center gap-3">
+					<div className="w-1.5 h-1.5 rounded-full bg-green" />
+					<span className="font-mono text-xs text-foreground-muted">
+						ORCID:{" "}
+						<a
+							href="https://orcid.org/0009-0006-5891-9396"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-accent hover:underline underline-offset-4"
+						>
+							0009-0006-5891-9396
+						</a>
+					</span>
 				</div>
 			</div>
 		</section>

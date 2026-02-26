@@ -6,9 +6,20 @@ const EXPERIENCES = [
 		company: "LCG Consulting",
 		location: "Los Altos, CA",
 		period: "Present",
+		current: true,
 		description:
-			"Conducting power systems analysis and energy market consulting. Specializing in modeling the economic impacts of flexible loads, renewable integration, and demand response in wholesale electricity markets including ERCOT.",
-		tags: ["Energy Markets", "ERCOT", "Power Systems", "Consulting"],
+			"Developing energy market simulations and economic analyses for power systems. Quantifying the impacts of large flexible loads on wholesale electricity markets, including ERCOT. Supporting utility and regulatory clients with data-driven insights on grid modernization and renewable integration.",
+		tags: ["Energy Markets", "ERCOT", "Power Systems", "Economic Analysis"],
+	},
+	{
+		title: "Graduate Research Assistant",
+		company: "UNC Charlotte - EPIC Lab",
+		location: "Charlotte, NC",
+		period: "2019 - 2021",
+		current: false,
+		description:
+			"Conducted research on costs and benefits of renewable generation on utility operations. Developed comprehensive methodologies for valuing distributed energy resources. Analyzed demand response and distributed energy storage for peak demand shaving in residential buildings.",
+		tags: ["Renewable Energy", "DER Valuation", "Demand Response", "Research"],
 	},
 ];
 
@@ -29,24 +40,23 @@ export function Experience() {
 									<h3 className="font-heading text-xl font-semibold text-foreground">
 										{exp.title}
 									</h3>
-									<p className="text-accent text-sm mt-0.5">
-										{exp.company}
-									</p>
+									<p className="text-accent text-sm mt-0.5">{exp.company}</p>
 								</div>
 								<div className="flex items-center gap-2 text-xs text-foreground-muted shrink-0">
 									<span>{exp.location}</span>
-									<span className="text-border-bright">
-										|
-									</span>
-									<span className="font-mono text-green">
-										{exp.period}
-									</span>
+									<span className="text-border-bright">|</span>
+									{exp.current ? (
+										<span className="inline-flex items-center gap-1.5 font-mono text-green">
+											<span className="h-1.5 w-1.5 rounded-full bg-green animate-pulse-glow" />
+											{exp.period}
+										</span>
+									) : (
+										<span className="font-mono text-foreground-muted/60">{exp.period}</span>
+									)}
 								</div>
 							</div>
 
-							<p className="text-foreground-muted leading-relaxed text-sm">
-								{exp.description}
-							</p>
+							<p className="text-foreground-muted leading-relaxed text-sm">{exp.description}</p>
 
 							<div className="mt-4 flex flex-wrap gap-2">
 								{exp.tags.map((tag) => (

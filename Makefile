@@ -1,7 +1,16 @@
-.PHONY: install format lint check test clean dev build
+.PHONY: install dev build start format lint check clean
 
 install:
 	bun install
+
+dev:
+	bun run dev
+
+build:
+	bun run build
+
+start:
+	bun run start
 
 format:
 	bun run format
@@ -12,14 +21,5 @@ lint:
 check:
 	bun run check
 
-test:
-	@echo "No tests configured yet"
-
 clean:
 	rm -rf .next node_modules
-
-dev:
-	bun run dev
-
-build:
-	bun run build
